@@ -1,0 +1,407 @@
+[
+  {
+    "model": "mlp",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 968,
+    "workspace": 376,
+    "operators": [
+      "Gemm",
+      "Relu"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 16367 instructions; host elapsed 10.4 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.38
+  },
+  {
+    "model": "mlp",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 389,
+    "workspace": 376,
+    "operators": [
+      "Gemm",
+      "Relu"
+    ],
+    "max_compression_error": 0.00284576416015625,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 29479 instructions; host elapsed 25.2 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.24
+  },
+  {
+    "model": "mlp",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 197,
+    "workspace": 376,
+    "operators": [
+      "Gemm",
+      "Relu"
+    ],
+    "max_compression_error": 0.282072052359581,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 44879 instructions; host elapsed 14.5 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.04
+  },
+  {
+    "model": "cnn",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 1024,
+    "workspace": 5416,
+    "operators": [
+      "Add",
+      "Conv",
+      "Gemm",
+      "MaxPool",
+      "ReduceMean",
+      "Relu"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 410670 instructions; host elapsed 29.5 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.17
+  },
+  {
+    "model": "cnn",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 608,
+    "workspace": 5416,
+    "operators": [
+      "Add",
+      "Conv",
+      "Gemm",
+      "MaxPool",
+      "ReduceMean",
+      "Relu"
+    ],
+    "max_compression_error": 0.0020553171634674072,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 635254 instructions; host elapsed 41.5 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.19
+  },
+  {
+    "model": "cnn",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 399,
+    "workspace": 5416,
+    "operators": [
+      "Add",
+      "Conv",
+      "Gemm",
+      "MaxPool",
+      "ReduceMean",
+      "Relu"
+    ],
+    "max_compression_error": 0.22543857246637344,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 1262706 instructions; host elapsed 52.4 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.22
+  },
+  {
+    "model": "attention",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 4188,
+    "workspace": 13040,
+    "operators": [
+      "Add",
+      "Div",
+      "Erf",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mul",
+      "ReduceMean",
+      "Softmax",
+      "Transpose"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 704397 instructions; host elapsed 42.0 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 2.45
+  },
+  {
+    "model": "attention",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 1628,
+    "workspace": 13040,
+    "operators": [
+      "Add",
+      "Div",
+      "Erf",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mul",
+      "ReduceMean",
+      "Softmax",
+      "Transpose"
+    ],
+    "max_compression_error": 0.0025095343589782715,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 1124537 instructions; host elapsed 56.3 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.92
+  },
+  {
+    "model": "attention",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 799,
+    "workspace": 13040,
+    "operators": [
+      "Add",
+      "Div",
+      "Erf",
+      "Gemm",
+      "LayerNormalization",
+      "MatMul",
+      "Mul",
+      "ReduceMean",
+      "Softmax",
+      "Transpose"
+    ],
+    "max_compression_error": 0.2684364542365074,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 1309452 instructions; host elapsed 57.5 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.92
+  },
+  {
+    "model": "token_classifier",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 1536,
+    "workspace": 1120,
+    "operators": [
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "ReduceMean"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 32107 instructions; host elapsed 11.1 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.2
+  },
+  {
+    "model": "token_classifier",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 600,
+    "workspace": 1120,
+    "operators": [
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "ReduceMean"
+    ],
+    "max_compression_error": 0.0036459267139434814,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 36895 instructions; host elapsed 10.3 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.06
+  },
+  {
+    "model": "token_classifier",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 285,
+    "workspace": 1120,
+    "operators": [
+      "Gather",
+      "Gemm",
+      "LayerNormalization",
+      "ReduceMean"
+    ],
+    "max_compression_error": 0.35604727268218994,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 42035 instructions; host elapsed 11.9 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.05
+  },
+  {
+    "model": "multi_input",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 328,
+    "workspace": 576,
+    "operators": [
+      "Concat",
+      "Gemm",
+      "Mul",
+      "ReduceSum",
+      "Sigmoid",
+      "Tanh"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 19956 instructions; host elapsed 11.4 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.21
+  },
+  {
+    "model": "multi_input",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 166,
+    "workspace": 576,
+    "operators": [
+      "Concat",
+      "Gemm",
+      "Mul",
+      "ReduceSum",
+      "Sigmoid",
+      "Tanh"
+    ],
+    "max_compression_error": 0.003979921340942383,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 27300 instructions; host elapsed 12.3 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.25
+  },
+  {
+    "model": "multi_input",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 106,
+    "workspace": 576,
+    "operators": [
+      "Concat",
+      "Gemm",
+      "Mul",
+      "ReduceSum",
+      "Sigmoid",
+      "Tanh"
+    ],
+    "max_compression_error": 0.5874120891094208,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 32944 instructions; host elapsed 10.2 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.24
+  },
+  {
+    "model": "signal_cnn",
+    "precision": "fp32",
+    "passed": true,
+    "parameters": 508,
+    "workspace": 1816,
+    "operators": [
+      "AveragePool",
+      "Conv",
+      "Flatten",
+      "Gemm",
+      "LeakyRelu"
+    ],
+    "max_compression_error": 0.0,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 63223 instructions; host elapsed 21.3 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.07
+  },
+  {
+    "model": "signal_cnn",
+    "precision": "int8",
+    "passed": true,
+    "parameters": 192,
+    "workspace": 1816,
+    "operators": [
+      "AveragePool",
+      "Conv",
+      "Flatten",
+      "Gemm",
+      "LeakyRelu"
+    ],
+    "max_compression_error": 0.001322716474533081,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 82515 instructions; host elapsed 29.1 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.09
+  },
+  {
+    "model": "signal_cnn",
+    "precision": "binary",
+    "passed": true,
+    "parameters": 87,
+    "workspace": 1816,
+    "operators": [
+      "AveragePool",
+      "Conv",
+      "Flatten",
+      "Gemm",
+      "LeakyRelu"
+    ],
+    "max_compression_error": 0.22227084636688232,
+    "verification": {
+      "host": "PASS 4 fixtures numerical parity",
+      "rv32_functional_emulator": "PASS 4 fixtures numerical parity\nRV32IMF functional emulation: 98969 instructions; host elapsed 27.1 ms",
+      "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+      "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+    },
+    "seconds": 1.08
+  }
+]

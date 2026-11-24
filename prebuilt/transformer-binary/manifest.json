@@ -1,0 +1,110 @@
+{
+  "version": "0.1.0",
+  "precision": "binary",
+  "arithmetic": "FP32; weight storage only is compressed",
+  "inputs": [
+    {
+      "name": "input0",
+      "shape": [
+        1,
+        6
+      ],
+      "dtype": "int64",
+      "c_dtype": "int32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "65",
+      "shape": [
+        1,
+        2
+      ]
+    }
+  ],
+  "operators": [
+    "Add",
+    "Div",
+    "Gather",
+    "Gemm",
+    "LayerNormalization",
+    "MatMul",
+    "Relu",
+    "Reshape",
+    "Softmax",
+    "Transpose"
+  ],
+  "operator_count": 33,
+  "compressed_tensors": [
+    "onnx::MatMul_66",
+    "onnx::MatMul_67",
+    "onnx::MatMul_68",
+    "onnx::MatMul_69",
+    "onnx::MatMul_70",
+    "onnx::MatMul_71",
+    "out.weight",
+    "token.weight"
+  ],
+  "parameter_storage_bytes": 2994,
+  "workspace_bytes": 19280,
+  "eligible_fp32_weight_bytes": 19776,
+  "verification_cases": 8,
+  "compression_output_error": [
+    {
+      "case": 0,
+      "output": 0,
+      "max_abs": 1.5398409366607666,
+      "rmse": 1.49296136841504
+    },
+    {
+      "case": 1,
+      "output": 0,
+      "max_abs": 2.153061628341675,
+      "rmse": 1.8952457842198247
+    },
+    {
+      "case": 2,
+      "output": 0,
+      "max_abs": 1.6182785034179688,
+      "rmse": 1.5859017091238727
+    },
+    {
+      "case": 3,
+      "output": 0,
+      "max_abs": 2.1950467824935913,
+      "rmse": 1.961745360636957
+    },
+    {
+      "case": 4,
+      "output": 0,
+      "max_abs": 2.5941781997680664,
+      "rmse": 2.1998388994084372
+    },
+    {
+      "case": 5,
+      "output": 0,
+      "max_abs": 1.6269514560699463,
+      "rmse": 1.5765907352261728
+    },
+    {
+      "case": 6,
+      "output": 0,
+      "max_abs": 5.610846042633057,
+      "rmse": 5.156767920642021
+    },
+    {
+      "case": 7,
+      "output": 0,
+      "max_abs": 1.6496007442474365,
+      "rmse": 1.631164790626939
+    }
+  ],
+  "limitations": [
+    "Static shapes and data-independent graph only",
+    "INT8 and binary weights are decoded during FP32 arithmetic",
+    "No task-accuracy guarantee from numerical verification",
+    "Generated workspace is static and not reentrant",
+    "RV32 ELF targets QEMU virt, not arbitrary board memory maps"
+  ],
+  "source_graph_sha256": "88a3cb180af24d808ccf931929826b93c722deda5dbbe6d0b9bf027e79e8eaf4"
+}

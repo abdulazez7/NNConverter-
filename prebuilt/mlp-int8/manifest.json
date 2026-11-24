@@ -1,0 +1,100 @@
+{
+  "version": "0.1.0",
+  "precision": "int8",
+  "arithmetic": "FP32; weight storage only is compressed",
+  "inputs": [
+    {
+      "name": "input0",
+      "shape": [
+        1,
+        6
+      ],
+      "dtype": "int64",
+      "c_dtype": "int32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "12",
+      "shape": [
+        1,
+        2
+      ]
+    }
+  ],
+  "operators": [
+    "Add",
+    "Flatten",
+    "Gather",
+    "Gemm",
+    "Relu"
+  ],
+  "operator_count": 6,
+  "compressed_tensors": [
+    "out.weight",
+    "token.weight",
+    "up.weight"
+  ],
+  "parameter_storage_bytes": 8320,
+  "workspace_bytes": 2144,
+  "eligible_fp32_weight_bytes": 29184,
+  "verification_cases": 8,
+  "compression_output_error": [
+    {
+      "case": 0,
+      "output": 0,
+      "max_abs": 0.012902259826660156,
+      "rmse": 0.00914791591365955
+    },
+    {
+      "case": 1,
+      "output": 0,
+      "max_abs": 0.01938915252685547,
+      "rmse": 0.01388726061137889
+    },
+    {
+      "case": 2,
+      "output": 0,
+      "max_abs": 0.030958175659179688,
+      "rmse": 0.024188702010416226
+    },
+    {
+      "case": 3,
+      "output": 0,
+      "max_abs": 0.03002452850341797,
+      "rmse": 0.021326973608476102
+    },
+    {
+      "case": 4,
+      "output": 0,
+      "max_abs": 0.028141498565673828,
+      "rmse": 0.02002103835145827
+    },
+    {
+      "case": 5,
+      "output": 0,
+      "max_abs": 0.012666702270507812,
+      "rmse": 0.010375395400937923
+    },
+    {
+      "case": 6,
+      "output": 0,
+      "max_abs": 0.06279945373535156,
+      "rmse": 0.04904382198131722
+    },
+    {
+      "case": 7,
+      "output": 0,
+      "max_abs": 0.023809432983398438,
+      "rmse": 0.0168805364356602
+    }
+  ],
+  "limitations": [
+    "Static shapes and data-independent graph only",
+    "INT8 and binary weights are decoded during FP32 arithmetic",
+    "No task-accuracy guarantee from numerical verification",
+    "Generated workspace is static and not reentrant",
+    "RV32 ELF targets QEMU virt, not arbitrary board memory maps"
+  ],
+  "source_graph_sha256": "bbe206be2a48c8db759f6a63435546dfeb306d9f086ddd473d90d546dea2c0e5"
+}

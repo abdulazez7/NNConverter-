@@ -1,0 +1,100 @@
+{
+  "version": "0.1.0",
+  "precision": "binary",
+  "arithmetic": "FP32; weight storage only is compressed",
+  "inputs": [
+    {
+      "name": "input0",
+      "shape": [
+        1,
+        6
+      ],
+      "dtype": "int64",
+      "c_dtype": "int32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "12",
+      "shape": [
+        1,
+        2
+      ]
+    }
+  ],
+  "operators": [
+    "Add",
+    "Flatten",
+    "Gather",
+    "Gemm",
+    "Relu"
+  ],
+  "operator_count": 6,
+  "compressed_tensors": [
+    "out.weight",
+    "token.weight",
+    "up.weight"
+  ],
+  "parameter_storage_bytes": 1936,
+  "workspace_bytes": 2144,
+  "eligible_fp32_weight_bytes": 29184,
+  "verification_cases": 8,
+  "compression_output_error": [
+    {
+      "case": 0,
+      "output": 0,
+      "max_abs": 13.151771306991577,
+      "rmse": 11.65397636205378
+    },
+    {
+      "case": 1,
+      "output": 0,
+      "max_abs": 7.251410484313965,
+      "rmse": 6.208468554986705
+    },
+    {
+      "case": 2,
+      "output": 0,
+      "max_abs": 4.514782905578613,
+      "rmse": 4.199339496850775
+    },
+    {
+      "case": 3,
+      "output": 0,
+      "max_abs": 9.551524639129639,
+      "rmse": 8.696666484052974
+    },
+    {
+      "case": 4,
+      "output": 0,
+      "max_abs": 4.040226221084595,
+      "rmse": 3.1016931189832646
+    },
+    {
+      "case": 5,
+      "output": 0,
+      "max_abs": 14.141557216644287,
+      "rmse": 12.590724984920918
+    },
+    {
+      "case": 6,
+      "output": 0,
+      "max_abs": 2.9664993286132812,
+      "rmse": 2.7855910212996293
+    },
+    {
+      "case": 7,
+      "output": 0,
+      "max_abs": 11.304972171783447,
+      "rmse": 10.432774157284946
+    }
+  ],
+  "limitations": [
+    "Static shapes and data-independent graph only",
+    "INT8 and binary weights are decoded during FP32 arithmetic",
+    "No task-accuracy guarantee from numerical verification",
+    "Generated workspace is static and not reentrant",
+    "RV32 ELF targets QEMU virt, not arbitrary board memory maps"
+  ],
+  "source_graph_sha256": "bbe206be2a48c8db759f6a63435546dfeb306d9f086ddd473d90d546dea2c0e5"
+}

@@ -1,0 +1,96 @@
+{
+  "version": "0.1.0",
+  "precision": "fp32",
+  "arithmetic": "FP32; weight storage only is compressed",
+  "inputs": [
+    {
+      "name": "input0",
+      "shape": [
+        1,
+        6
+      ],
+      "dtype": "int64",
+      "c_dtype": "int32"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "12",
+      "shape": [
+        1,
+        2
+      ]
+    }
+  ],
+  "operators": [
+    "Add",
+    "Flatten",
+    "Gather",
+    "Gemm",
+    "Relu"
+  ],
+  "operator_count": 6,
+  "compressed_tensors": [],
+  "parameter_storage_bytes": 29960,
+  "workspace_bytes": 2144,
+  "eligible_fp32_weight_bytes": 29184,
+  "verification_cases": 8,
+  "compression_output_error": [
+    {
+      "case": 0,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 1,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 2,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 3,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 4,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 5,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 6,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    },
+    {
+      "case": 7,
+      "output": 0,
+      "max_abs": 0.0,
+      "rmse": 0.0
+    }
+  ],
+  "limitations": [
+    "Static shapes and data-independent graph only",
+    "INT8 and binary weights are decoded during FP32 arithmetic",
+    "No task-accuracy guarantee from numerical verification",
+    "Generated workspace is static and not reentrant",
+    "RV32 ELF targets QEMU virt, not arbitrary board memory maps"
+  ],
+  "source_graph_sha256": "bbe206be2a48c8db759f6a63435546dfeb306d9f086ddd473d90d546dea2c0e5"
+}

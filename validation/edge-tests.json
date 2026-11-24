@@ -1,0 +1,265 @@
+{
+  "tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "differential_cases": [
+    {
+      "case": "batched_matmul_broadcast",
+      "precision": "fp32",
+      "operators": [
+        "MatMul"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 16673 instructions; host elapsed 18.2 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "group_stride_dilation",
+      "precision": "int8",
+      "operators": [
+        "Conv"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 108415 instructions; host elapsed 30.5 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "broadcast",
+      "precision": "fp32",
+      "operators": [
+        "Abs",
+        "Add",
+        "Div",
+        "Mul",
+        "Sub"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 2713 instructions; host elapsed 14.7 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "expand",
+      "precision": "fp32",
+      "operators": [
+        "Expand",
+        "Unsqueeze"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 1340 instructions; host elapsed 10.5 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "exp_subnormal",
+      "precision": "fp32",
+      "operators": [
+        "Exp"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 998 instructions; host elapsed 14.3 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "where_masks",
+      "precision": "fp32",
+      "operators": [
+        "Greater",
+        "Mul",
+        "Where"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 655 instructions; host elapsed 11.4 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "softmax_axis",
+      "precision": "fp32",
+      "operators": [
+        "LogSoftmax",
+        "Softmax"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 5948 instructions; host elapsed 18.9 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "nonlinear",
+      "precision": "fp32",
+      "operators": [
+        "Abs",
+        "Add",
+        "Clip",
+        "Elu",
+        "Exp",
+        "Log",
+        "Mul",
+        "Softplus",
+        "Sqrt"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 10979 instructions; host elapsed 19.2 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "layernorm_multiaxis",
+      "precision": "fp32",
+      "operators": [
+        "LayerNormalization"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 1511 instructions; host elapsed 12.6 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "pad_crop",
+      "precision": "fp32",
+      "operators": [
+        "Pad"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 16573 instructions; host elapsed 23.2 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "pool_padding",
+      "precision": "fp32",
+      "operators": [
+        "AveragePool",
+        "MaxPool"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 35138 instructions; host elapsed 34.2 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "reductions",
+      "precision": "fp32",
+      "operators": [
+        "ReduceMax",
+        "ReduceMean",
+        "ReduceSum"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 853 instructions; host elapsed 10.8 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "slice_concat_split",
+      "precision": "fp32",
+      "operators": [
+        "Concat",
+        "Slice",
+        "Split"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 1822 instructions; host elapsed 13.0 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "unseen_mlp_3_11_7",
+      "precision": "binary",
+      "operators": [
+        "Gemm",
+        "Relu"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 10248 instructions; host elapsed 18.0 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "unseen_mlp_13_5_2",
+      "precision": "binary",
+      "operators": [
+        "Gemm",
+        "Relu"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 5618 instructions; host elapsed 15.4 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "unseen_mlp_1_1_1",
+      "precision": "binary",
+      "operators": [
+        "Gemm",
+        "Relu"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 421 instructions; host elapsed 11.6 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "zero_weights",
+      "precision": "int8",
+      "operators": [
+        "Gemm"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 483 instructions; host elapsed 11.2 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    },
+    {
+      "case": "zero_weights",
+      "precision": "binary",
+      "operators": [
+        "Gemm"
+      ],
+      "result": {
+        "host": "PASS 1 fixtures numerical parity",
+        "rv32_functional_emulator": "PASS 1 fixtures numerical parity\nRV32IMF functional emulation: 990 instructions; host elapsed 13.3 ms",
+        "tolerance": "abs <= 0.0003 + 0.0003 * abs(reference); all output elements checked",
+        "reference": "ONNX Runtime executing identical transformed weights; original-weight drift is in manifest.json"
+      }
+    }
+  ]
+}
